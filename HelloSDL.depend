@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1588474684 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/Game.cpp
+	"Game.h"
+
+1588474980 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/Game.h
+	<SDL2/SDL.h>
+	<iostream>
+
+1588474713 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/main.cpp
+	"Game.h"
+	<SDL2/SDL.h>
+
