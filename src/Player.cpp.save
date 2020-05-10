@@ -1,0 +1,7 @@
+#include "Player.h"
+
+Player::load(int xPosition, int yPosition, int width, int height , string textureId)
+{
+GameObject::load(xPosition,yPosition,)
+
+}

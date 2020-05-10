@@ -1,0 +1,24 @@
+#ifndef GAMEOBJECT_H
+#define GAMEOBJECT_H
+#include <iostream>
+
+class GameObject
+{
+    public:
+void draw() {
+    std::cout << "draw game object";
+        }
+        void update() {
+        
+        std::cout << "Update object"; 
+        }
+        void clean()  { 
+        
+        std::cout }
+
+    protected:
+
+    private:
+};
+
+#endif // GAMEOBJECT_H

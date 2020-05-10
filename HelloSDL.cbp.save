@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="HelloSDL" />
+		<Option title="SDLGameProgramming" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -15,6 +15,9 @@
 					<Add option="-g" />
 					<Add directory="include" />
 				</Compiler>
+				<Linker>
+					<Add library="SDL2_image" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/HelloSDL" prefix_auto="1" extension_auto="1" />
@@ -38,8 +41,18 @@
 			<Add option="`sdl2-config --libs`" />
 		</Linker>
 		<Unit filename="include/Game.h" />
+		<Unit filename="include/GameObject.h" />
+		<Unit filename="include/Player.h" />
+		<Unit filename="include/TextureManager.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Assets/YellowKnight.bmp" />
+		<Unit filename="src/Assets/animate.png" />
+		<Unit filename="src/Assets/walkAnimation1.bmp" />
+		<Unit filename="src/Assets/walkAnimation1.png" />
 		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/GameObject.cpp" />
+		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/TextureManager.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

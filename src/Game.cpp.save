@@ -51,7 +51,7 @@ bool Game::init(const char *title, int xPostion, int yPosition, int width, int h
         return false;
     }
     // Load player
-    if (!TheTextureManager::Instance()->load("src/Assets/animate.png", "animate", renderer))
+    if (!TheTextureManager::Instance()->load("src/Assets/walkAnimation1.bmp", "animate", renderer))
     {
         std::cout << "Player LOAD - [FAILURE]" << std::endl;
         return false;
@@ -59,9 +59,9 @@ bool Game::init(const char *title, int xPostion, int yPosition, int width, int h
     std::cout << "Game::Init() - [SUCCESS]" << std::endl;
     isRunning = true;
 
-    gameObject.load(300, 300, 52, 52, "animate");
+    gameObject.load(300, 200, 52, 52, "animate");
     std::cout << "Game Object Init - [SUCCESS]" << std::endl;
-    player.load(300, 300, 52, 52, "animate");
+    player.load(300, 200, 52, 52, "animate");
     std::cout << "Player Object Init - [SUCCESS]" << std::endl;
     return true;
 }
