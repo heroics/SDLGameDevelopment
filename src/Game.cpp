@@ -1,15 +1,21 @@
 #include "Game.h"
+#include "InputHandler.h"
 #include "TextureManager.h"
 #include <SDL2/SDL_image.h>
 
-Game::Game()
-{
-    //ctor
-}
 Game::~Game()
 {
     //dtor
 }
+Game::Game()
+{
+}
+void Game::quit()
+{
+    isRunning = false;
+}
+Game *Game::staticPtrInstance = 0;
+
 bool Game::init(const char *title, int xPostion, int yPosition, int width, int height, bool isFullScreen)
 {
     // Attempt to Initialize SDL
@@ -59,10 +65,14 @@ bool Game::init(const char *title, int xPostion, int yPosition, int width, int h
     std::cout << "Game::Init() - [SUCCESS]" << std::endl;
     isRunning = true;
 
-    gameObject.load(300, 300, 52, 52, "animate");
-    std::cout << "Game Object Init - [SUCCESS]" << std::endl;
-    player.load(300, 300, 52, 52, "animate");
+    // Create Game Objects
+    gameObjects.push_back(new Player(new LoaderParameters(300, 300, 52, 52, "animate")));
     std::cout << "Player Object Init - [SUCCESS]" << std::endl;
+    gameObjects.push_back(new Enemy(new LoaderParameters(300, 300, 52, 52, "animate")));
+    std::cout << "Enemy Object Init - [SUCCESS]" << std::endl;
+
+    // Create the Joystick
+    TheInputHandler::Instance()->initialiseJoysticks();
     return true;
 }
 void Game::render()
@@ -70,42 +80,38 @@ void Game::render()
     // Clear the renderer to the draw color
     SDL_RenderClear(renderer);
 
-    // Draw Knight
-    gameObject.draw(renderer);
-    player.draw(renderer);
+    // Loop GameObjects Array and render objects
+    for (std::vector<GameObject *>::size_type i = 0; i < gameObjects.size(); i++)
+    {
+        gameObjects[i]->draw();
+    }
     // Draw the renderer to screen
     SDL_RenderPresent(renderer);
 }
 void Game::update()
 {
-    gameObject.update();
-    player.update();
-}
-void Game::handleEvents()
-{
-    SDL_Event event;
-    if (SDL_PollEvent(&event))
+    // Loop GameObjects Array and Update objects
+    for (std::vector<GameObject *>::size_type i = 0; i < gameObjects.size(); i++)
     {
-        switch (event.type)
-        {
-        case SDL_QUIT:
-            isRunning = false;
-            break;
-        default:
-            break;
-        }
+        gameObjects[i]->update();
     }
 }
+
 void Game::clean()
 {
 
     std::cout << "Cleaning Game" << std::endl;
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
+    TheInputHandler::Instance()->clean();
     SDL_Quit();
-    std::cout << "Graceful Quit - [SUCCESS]";
+    std::cout << "Graceful Quit - [SUCCESS]" << std::endl;
 }
 bool Game::running()
 {
     return isRunning;
+}
+void Game::handleEvents()
+{
+    TheInputHandler::Instance()->update();
 }

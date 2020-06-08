@@ -1,0 +1,20 @@
+#include "SDLGameObject.h"
+#include "TextureManager.h"
+#include "Game.h"
+SDLGameObject::SDLGameObject(const LoaderParameters *pParams) : GameObject(pParams)
+{
+    this->xPosition = pParams->getXPosition();
+    this->yPosition = pParams->getYPosition();
+    this->width = pParams->getWidth();
+    this->height = pParams->getHeight();
+    this->textureId = pParams->getTextureId();
+    this->currentRow = 1;
+    this->currentFrame = 1;
+}
+
+void SDLGameObject::draw()
+{
+    TextureManager::Instance()->drawCurrentFrame(textureId, xPosition,yPosition,width,height,currentRow,currentFrame,TheGame::Instance()->getRender());
+}
+
+

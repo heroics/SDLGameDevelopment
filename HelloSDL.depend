@@ -1,21 +1,25 @@
 # depslib dependency file v1.0
-1589124611 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/Game.cpp
+1590552453 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/Game.cpp
 	"Game.h"
+	"InputHandler.h"
 	"TextureManager.h"
 	<SDL2/SDL_image.h>
 
-1589038364 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/Game.h
+1590551687 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/Game.h
+	"Enemy.h"
 	"GameObject.h"
 	"Player.h"
 	"TextureManager.h"
 	<SDL2/SDL.h>
 	<iostream>
+	<vector>
 
-1589045344 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/main.cpp
+1590514943 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/main.cpp
 	"Game.h"
 	<SDL2/SDL.h>
+	<iostream>
 
-1589037934 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/TextureManager.h
+1589509830 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/TextureManager.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<iostream>
@@ -25,19 +29,56 @@
 1589046774 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/TextureManager.cpp
 	"TextureManager.h"
 
-1589124764 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/GameObject.cpp
+1589509818 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/GameObject.cpp
+
+1589509836 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/GameObject.h
+	<LoaderParameters.h>
+	<SDL2/SDL.h>
+	<string>
+
+1591589382 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/Player.cpp
+	"Player.h"
+	"InputHandler.h"
+
+1591069440 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/Player.h
+	"SDLGameObject.h"
+
+1589509832 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/Enemy.h
+	"SDLGameObject.h"
+	<string>
+
+1590439945 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/Enemy.cpp
+	"Enemy.h"
+
+1589509838 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/LoaderParameters.h
+	<string>
+
+1589496757 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/LoaderParameters.cpp
+	"LoaderParameters.h"
+
+1590441493 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/SDLGameObject.h
 	"GameObject.h"
+	"LoaderParameters.h"
+	"Vector2D.h"
+	<string>
+
+1590441708 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/SDLGameObject.cpp
+	"SDLGameObject.h"
+	"Game.h"
 	"TextureManager.h"
 
-1589124222 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/GameObject.h
-	<string>
+1590549707 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/Vector2D.h
+	<math.h>
+
+1590440274 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/Vector2D.cpp
+
+1591589430 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/InputHandler.cpp
+	"InputHandler.h"
+	"Game.h"
+
+1591589278 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/InputHandler.h
+	"Vector2D.h"
 	<SDL2/SDL.h>
-
-1589124366 source:/home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/src/Player.cpp
-	"Player.h"
-
-1589043196 /home/jordan/Documents/CPP/SDL/SDLGameDev/Chapter1/HelloSDL/include/Player.h
-	"GameObject.h"
 	<iostream>
-	<string>
+	<vector>
 

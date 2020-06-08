@@ -43,6 +43,11 @@
         "cstring": "cpp",
         "ctime": "cpp",
         "map": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "bit": "cpp"
     }
 }

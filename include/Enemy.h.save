@@ -1,0 +1,20 @@
+#ifndef ENEMY_H
+#define ENEMY_H
+#include "SDLGameObject.h"
+#include <iostream>
+#include <string>
+
+class Enemy : public SDLGameObject
+{
+public:
+    Enemy(const LoaderParameters *ptrLoaderParameters);
+    virtual ~Enemy();
+    virtual void draw();
+    virtual void update();
+    virtual void clean();
+
+protected:
+private:
+};
+
+#endif // ENEMY_H
